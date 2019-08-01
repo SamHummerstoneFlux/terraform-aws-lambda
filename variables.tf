@@ -126,6 +126,12 @@ variable "lambda_at_edge" {
   default     = false
 }
 
+# Hacky depends_on
+variable "depends_on" {
+  type = []
+  default = []
+}
+
 locals {
   publish = "${var.lambda_at_edge ? true : var.publish}"
   timeout = "${var.lambda_at_edge ? min(var.timeout, 5) : var.timeout}"
