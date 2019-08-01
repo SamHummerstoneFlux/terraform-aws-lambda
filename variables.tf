@@ -128,7 +128,7 @@ variable "lambda_at_edge" {
 
 # Hacky depends_on
 variable "depends_on" {
-  type = []
+  type = "list"
   default = []
 }
 
